@@ -20,3 +20,24 @@ a{
 .infoIco{
     background-image: url(../img/email-white.png);
 }
+.cateitem.active a{
+    border-bottom: 2px solid #cccccc;
+}
+.linktitle,.copyRight{
+    color: #FFFFFF;
+}
+.markico{
+    background-image: url(../img/markwhite.svg);
+}
+.articleItem{
+    border-bottom: 1px solid #333333;
+}
+.articleDesc{
+    color: #aaaaaa;
+}
+.articleTitle{
+    color: #FFFFFF;
+}
+.tagsItem{
+    border: 1px solid #333333;
+}

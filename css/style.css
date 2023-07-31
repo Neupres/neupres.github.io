@@ -1,3 +1,4 @@
+/* 全局 */
 *{
     padding: 0;
     margin: 0;
@@ -7,27 +8,32 @@ html,body{
     height: 100%;
     font-family: -apple-system;
     transition: all .6s;
+    position: relative;
 }
 body{
     max-width: 840px;
     margin: 0 auto;
     position: relative;
 }
+/* swiper样式设置 */
+.swiper-container{
+    height: 100%;
+}
+.swiper-slide{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.menu {
+    max-width: 320px;
+}
+/* 头部 */
 header{
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    padding: 20px 0;
-}
-/* 主题切换按钮 */
-.themeChangeBtn{
-    font-size: 1rem;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    text-align: center;
+    padding-top: 20px;
 }
 .blogIco{
     width: 40px;
@@ -47,35 +53,11 @@ header{
     font-size: 1.125rem;
     font-weight: bold;
 }
-.themeChangeBox{
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    position: relative;
-}
-.themeChangeTransf{
-    width: 16px;
-    height: 16px;
-    font-size: 0.875rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transform-origin: bottom;
-    transform: translateY(-8px) rotate(0deg);
-    transition: all .6s;
-    position: relative;
-    z-index: 2;
-    font-weight: bold;
-}
 .themeL{
-    transform: translateY(-8px) rotate(120deg);
+    transform: rotate(120deg);
 }
 .themeD{
-    transform: translateY(-8px) rotate(-120deg);
+    transform: rotate(-120deg);
 }
 .info{
     display: flex;
@@ -90,6 +72,7 @@ header{
     background-size: contain;
     background-repeat: no-repeat;
 }
+/* 菜单 */
 .categroup{
     display: flex;
     align-items: center;
@@ -99,6 +82,10 @@ header{
 .cateitem{
     padding: 0 10px;
     cursor: pointer;
+}
+/* 底部 */
+footer{
+    width: 100%;
 }
 .linklist{
     width: 100%;
@@ -131,80 +118,94 @@ header{
     font-size: 0.75rem;
     margin-left: 6px;
 }
+/* 页面 */
 .container{
     min-height: 84px;
     padding: 20px;
 }
-.marklist{
-    display: flex;
-    width: 400px;
-    margin-top: 20px;
-    align-items: center;
-    justify-content: flex-start;
-}
-.markico{
-    width: 1rem;
-    height: 1rem;
-    background-position: center;
-    background-size: contain;
-}
-.markitem{
-    margin: 0 5px;
-}
 .articleList{
     margin-top: 20px;
-    min-width: 480px;
 }
 .articleItem{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 .articleHead{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.articleTitle{
+    font-size: 1.125rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.articleDate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+.articleDate .year{
+    white-space: nowrap;
+    font-size: 1rem;
+}
+.articleDate .date{
+    white-space: nowrap;
+    font-size: 0.725rem;
+}
+.articleDesc{
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+.articleTags{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.tagsItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.725rem;
+    padding: 2px 6px;
+    border-radius: 100px;
+    margin-right: 10px;
+    margin-bottom: 6px;
+    white-space: nowrap;
+}
 @media screen and (max-width: 750px) {
-    header{
-        flex-direction: row;
-        padding: 20px 10px;
-        width: 100%;
-        box-sizing: border-box;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+    .container{
+        padding: 0;
     }
     .blogIco{
         width: 20px;
         height: 20px;
         padding: 6px;
     }
-    .blogIco,.copyRight,.info,.categroup,.themeChangeBtn{
-        margin-top: 0;
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-    }
     .blogIco,.categroup{
         margin-bottom: 0;
     }
-    .cateitem{
-        padding: 0;
-        padding-right: 10px;
-    }
-    .themeChangeBtn{
-        position: initial;
-        order: 2;
-    }
-    .themeChangeBox{
-        width: 30px;
-        height: 30px;
-    }
     .categroup{
-        flex-wrap: wrap;
+        display: none;
     }
-    .cateitem{
-        margin-bottom: 10px;
+    .articleList{
+        margin-top: 0;
+    }
+    .info{
+        margin-top: 0;
+    }
+    .articleTitle{
+        font-size: 1rem;
+    }
+    .articleDate{
+        margin-left: 6px;
     }
     .linkitem{
         margin: 0 10px;

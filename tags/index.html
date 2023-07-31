@@ -8,18 +8,19 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
+    
+<link rel="stylesheet" href="/css/swiper.css">
+
     <link rel="stylesheet" class="themeSetEle" href="/css/light.css">
 <meta name="generator" content="Hexo 6.3.0"></head>
 <body>
-    <div class="main">
-        <header>
-    <div class="themeChangeBtn" onclick="setThemeModeFn()">
-        <div class="themeChangeBox bg">
-            <div class="themeChangeTransf ubg" id="themebtn">L</div>
-        </div>
-    </div>
-    <div class="blogIco bg">
-        <div class="ico"></div>
+    <div class="swiper-container">
+		<div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="main">
+                    <header>
+    <div class="blogIco bg" onclick="setThemeModeFn()">
+        <div class="ico" id="themebtn"></div>
     </div>
     <div class="copyRight">Neupres`s blog</div>
     <div class="info">
@@ -28,35 +29,32 @@
             <a href="mailto:neupres@icloud.com" title="Neupres&#96; email">Neupres&#96; email</a>
         </div>
     </div>
-    <div class="categroup">
-        
-            <div class="cateitem ">
-                <a href="/" title="主页">主页</a>
-            </div>
-        
-            <div class="cateitem ">
-                <a href="/archives" title="归档">归档</a>
-            </div>
-        
-            <div class="cateitem active">
-                <a href="/categories" title="分类">分类</a>
-            </div>
-        
-            <div class="cateitem ">
-                <a href="/tags" title="标签">标签</a>
-            </div>
-        
-            <div class="cateitem ">
-                <a href="/about" title="关于">关于</a>
-            </div>
-        
-    </div>
-    <!-- <div class="marklist">
-        <div class="markico"></div>
-        <a href="/categories" title="分类" class="markitem">分类</a>
-    </div> -->
+</header>
+<div class="categroup">
+    
+        <div class="cateitem ">
+            <a href="/" title="主页">主页</a>
+        </div>
+    
+        <div class="cateitem ">
+            <a href="/archives" title="归档">归档</a>
+        </div>
+    
+        <div class="cateitem ">
+            <a href="/categories" title="分类">分类</a>
+        </div>
+    
+        <div class="cateitem active">
+            <a href="/tags" title="标签">标签</a>
+        </div>
+    
+        <div class="cateitem ">
+            <a href="/about" title="关于">关于</a>
+        </div>
+    
+</div>
 <div class="container"></div>
-        <footer>
+                    <footer>
     <div class="linklist">
         <div class="linkitem">
             <div class="linktitle">Neupres</div>
@@ -64,7 +62,7 @@
                 
                 <div class="linksubitem">
                     <a target="_blank" rel="noopener" href="https://neupres@github.io" title="Nuepres's blog">Nuepres's blog</a>
-                </div>
+                </div>·
                 
             </div>
         </div>
@@ -92,11 +90,51 @@
         </div>
     </div>
 </footer>
-    </div>
+                </div>
+			</div>
+			<div class="swiper-slide menu">Menu slide</div>
+		</div>
+	</div>
 </body>
 
 <script src="/js/jquery-3.7.0.min.js"></script>
 
+
+<script src="/js/swiper.js"></script>
+
+<script>
+    let flag = true,swiper = null;
+    //初始化swiper
+    initSwiper();
+    //监听浏览器窗口变化
+    $(window).resize(function(){
+        if(flag){
+            flag = false;
+            setTimeout(function(){
+                initSwiper();
+                flag = true;
+            },600)
+        }
+    })
+    function initSwiper(){
+        if(swiper){
+            swiper.destroy(true,true);
+            swiper = null;
+        }
+        if($(window).width()<=750){
+            swiper = new Swiper('.swiper-container', {
+                slidesPerView: 'auto'
+                , slideToClickedSlide: true
+                , resistanceRatio: .5
+            })
+            swiper.on('click',function(e){
+                if(e.clickedIndex == 1){
+                    swiper.slideTo(0);
+                }
+            })
+        }
+    }
+</script>
 
 <script src="/js/index.js"></script>
 

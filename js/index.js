@@ -4,7 +4,6 @@
  */
 function getThemeModeFn(){
     let theme = localStorage.getItem('themeMode')??'L';
-    $('#themebtn').text(theme);
     $('#themebtn').removeClass('themeL themeA themeD').addClass('theme'+theme);
     if(theme == 'A'){
         let timer = new Date().getHours();
@@ -31,4 +30,8 @@ function setThemeModeFn(){
     }
     localStorage.setItem('themeMode',themeModearr[themeMode]);
     getThemeModeFn();
+}
+
+function topath(url){
+    window.location.href = url
 }
