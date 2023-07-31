@@ -1,0 +1,22 @@
+body{
+    background-color: #201F1F;
+    color: #cccccc;
+}
+a{
+    color: #cccccc;
+    text-decoration: none;
+}
+.bg{
+    background-color: #F9F4EC;
+    color: #333333;
+}
+.ubg{
+    background-color: #201F1F;
+    color: #cccccc;
+}
+.blogIco .ico{
+    background-image: url(../img/darkico.svg);
+}
+.infoIco{
+    background-image: url(../img/email-white.png);
+}
