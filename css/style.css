@@ -83,6 +83,27 @@ header{
     padding: 0 10px;
     cursor: pointer;
 }
+.mobileMenu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+}
+.mobileMenu .cateitem{
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.mobileMenu .cateitem a{
+    padding: 20px 0;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* 底部 */
 footer{
     width: 100%;
@@ -118,6 +139,19 @@ footer{
     font-size: 0.75rem;
     margin-left: 6px;
 }
+/* 分页 */
+.pagebox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+.pagebox .current,.pagebox .total{
+    font-size: 0.875rem;
+    margin: 0 10px;
+}
+
 /* 页面 */
 .container{
     min-height: 84px;
@@ -125,6 +159,7 @@ footer{
 }
 .articleList{
     margin-top: 20px;
+    padding: 0 10px;
 }
 .articleItem{
     display: flex;

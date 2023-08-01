@@ -41,3 +41,7 @@ a{
 .tagsItem{
     border: 1px solid #333333;
 }
+.mobileMenu .cateitem a.focus{
+    background-color: #CCCCCC;
+    color: #333333;
+}
