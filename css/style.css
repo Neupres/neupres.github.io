@@ -11,7 +11,7 @@ html,body{
     position: relative;
 }
 body{
-    max-width: 840px;
+    max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
@@ -126,6 +126,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
+    box-sizing: border-box;
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
@@ -155,6 +156,7 @@ header{
 }
 .moreinfo{
     padding: 10px;
+    box-sizing: border-box;
     width: 70%;
 }
 .archlistbox{
@@ -165,9 +167,13 @@ header{
 }
 .archive-list{
     padding: 10px 24px;
+    box-sizing: border-box;
 }
 .archive-list-item{
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 /* 底部 */
 footer{
@@ -216,15 +222,18 @@ footer{
     font-size: 0.875rem;
     margin: 0 10px;
 }
-
+.pagebox .current,.pagebox .prev{
+    margin-right: 10px;
+}
 /* 首页 */
 .container{
-    min-height: 84px;
     padding: 20px;
+    box-sizing: border-box;
 }
 .articleList{
     margin-top: 20px;
     padding: 0 10px;
+    box-sizing: border-box;
 }
 .articleItem{
     display: flex;
@@ -281,6 +290,7 @@ footer{
     margin-right: 10px;
     margin-bottom: 6px;
     white-space: nowrap;
+    box-sizing: border-box;
 }
 /* 归档 */
 .archbox{
@@ -288,18 +298,166 @@ footer{
     width: 100%;
     justify-content: space-between;
     position: relative;
+    padding: 20px;
+    padding-bottom: 0;
+    box-sizing: border-box;
 }
 .archcate{
-    width: calc(30% - 30px);
+    width: 30%;
 }
 .archlist{
     flex: 1;
     display: flex;
     flex-direction: column; 
 }
+.architem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.architem .archtit{
+    display: flex;
+    align-items: flex-end;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+.architem .archtit a{
+    flex: 1;
+    word-break: break-all;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.architem .archtit .archnum{
+    font-size: 12px;
+    margin-right: 10px;
+}
+.architem .archDate{
+    font-size: 12px;
+    display: flex;
+    white-space: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.architem .archDate .year{
+    font-size: 14px;
+}
+.archive-list-count::after{
+    content: "篇";
+    margin-left: 4px;
+}
+.archive-list-link{
+    flex: 1;
+}
+.catematch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.catematch .category-list,.tag-list{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+.catematch .category-list .category-list-item,.tag-list-item{
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.catematch .category-list .category-list-item .category-list-link,.tag-list-link{
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.catematch .category-list .category-list-item .category-list-count::after,.tag-list-count::after{
+    content: '篇';
+}
+.nopaddTop{
+    padding-top: 0;
+    box-sizing: border-box;
+}
+.abouttitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+.aboutbox{
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+.aboutcontent{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.aboutcontent p{
+    text-indent: 2rem;
+    text-align: justify;
+    margin: 10px 0;
+}
+.detailtitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+.detailsubinfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.detailsubinfo .cdate{
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.detailmain{
+    display: flex;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+.detailleft{
+    margin-right: 40px;
+}
+.detailcate{
+    margin-bottom: 20px;
+}
+.detailleft .tit{
+    margin-bottom: 10px;
+}
+.detailcontent{
+    width: 100px;
+    flex: 1;
+}
+.detailcontent img{
+    max-width: 100%!important;
+}
+.detailcontent *{
+    white-space: pre-line!important;
+}
 @media screen and (max-width: 750px) {
     .container{
         padding: 0;
+        box-sizing: border-box;
     }
     .blogIco{
         width: 20px;
@@ -336,5 +494,13 @@ footer{
     }
     .mobileMenu .cateitem{
         padding: 5px;
+        box-sizing: border-box;
+    }
+    .archlist{
+        flex: 1;
+        width: 100%;
+    }
+    .archbunk{
+        display: none;
     }
 }

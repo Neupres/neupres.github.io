@@ -14,6 +14,9 @@ a{
     background-color: #F9F4EC;
     color: #333333;
 }
+.detailcontent img{
+    background-color: #efefef;
+}
 .blogIco .ico{
     background-image: url(../img/lightico.svg);
 }
