@@ -29,9 +29,6 @@ a{
 .markico{
     background-image: url(../img/markwhite.svg);
 }
-.articleItem{
-    border-bottom: 1px solid #333333;
-}
 .articleDesc{
     color: #aaaaaa;
 }
@@ -42,6 +39,5 @@ a{
     border: 1px solid #333333;
 }
 .mobileMenu .cateitem a.focus{
-    background-color: #CCCCCC;
-    color: #333333;
+    border-bottom: 2px solid #CCCCCC;
 }
